@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/* \
   && curl -s -o /opt/atlassian/atlassian-stash.tar.gz -SL 'http://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-3.3.2.tar.gz' \
   && tar xf /opt/atlassian/atlassian-stash.tar.gz -C /opt/atlassian --strip-components=1 \
   && rm -f /opt/atlassian/atlassian-stash.tar.gz \
+  && mkdir -p /opt/atlassian/lib/native \
   && ln -s /usr/lib/x86_64-linux-gnu/libtcnative-1* /opt/atlassian/lib/native \
   && chown -R atlassian /opt/atlassian \
   && apt-get purge -y --auto-remove curl
