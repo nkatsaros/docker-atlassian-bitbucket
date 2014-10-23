@@ -76,7 +76,7 @@ func getDirs(path string) (dirs []string, err error) {
 		return nil, err
 	}
 	for _, entry := range entries {
-		if entry.IsDir() {
+		if entry.IsDir() && !strings.HasPrefix(entry.Name(), ".") {
 			dirs = append(dirs, entry.Name())
 		}
 	}
