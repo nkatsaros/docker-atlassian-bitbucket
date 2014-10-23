@@ -22,8 +22,8 @@ ENV STASH_VERSION 3.0.8
 # extract stash
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/* \
   && mkdir -p /opt/atlassian \
-  && curl -o /opt/atlassian/atlassian-stash.tar.gz -SL 'http://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-$STASH_VERSION.tar.gz' \
-  && tar xzf /opt/atlassian/atlassian-stash.tar.gz -C /opt/atlassian --strip-components=1 \
+  && curl -s -o /opt/atlassian/atlassian-stash.tar.gz -SL 'http://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-3.0.8.tar.gz' \
+  && tar xf /opt/atlassian/atlassian-stash.tar.gz -C /opt/atlassian --strip-components=1 \
   && rm -f /opt/atlassian/atlassian-stash.tar.gz \
   && ln -s /usr/lib/x86_64-linux-gnu/libtcnative-1* /opt/atlassian/lib/native \
   && chown -R atlassian /opt/atlassian \
