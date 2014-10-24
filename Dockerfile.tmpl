@@ -38,5 +38,5 @@ COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 # http(s), ssh
-EXPOSE 7990 7990
+EXPOSE 7990 7999
 CMD ["stash"]
