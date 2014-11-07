@@ -15,14 +15,14 @@ RUN apt-get update && apt-get install -y \
     libtcnative-1 \
     git \
     perl \
-  && rm -rf /var/lib/apt/lists/*    
+  && rm -rf /var/lib/apt/lists/*
 
-ENV STASH_VERSION 3.1.5
+ENV STASH_VERSION 3.1.7
 
 # extract stash
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/* \
   && mkdir -p /opt/atlassian \
-  && curl -s -o /opt/atlassian/atlassian-stash.tar.gz -SL 'http://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-3.1.5.tar.gz' \
+  && curl -s -o /opt/atlassian/atlassian-stash.tar.gz -SL 'http://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-3.1.7.tar.gz' \
   && tar xf /opt/atlassian/atlassian-stash.tar.gz -C /opt/atlassian --strip-components=1 \
   && rm -f /opt/atlassian/atlassian-stash.tar.gz \
   && mkdir -p /opt/atlassian/lib/native \

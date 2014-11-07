@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     libtcnative-1 \
     git \
     perl \
-  && rm -rf /var/lib/apt/lists/*    
+  && rm -rf /var/lib/apt/lists/*
 
 ENV STASH_VERSION 2.11.9
 
