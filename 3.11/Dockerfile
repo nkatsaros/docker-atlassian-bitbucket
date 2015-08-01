@@ -21,12 +21,12 @@ RUN apt-get update && apt-get install -y \
     perl \
   && rm -rf /var/lib/apt/lists/*
 
-ENV STASH_VERSION 3.10.4
+ENV STASH_VERSION 3.11.1
 
 # extract stash
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/* \
   && mkdir -p /opt/atlassian \
-  && curl -s -o /opt/atlassian/atlassian-stash.tar.gz -SL 'https://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-3.10.4.tar.gz' \
+  && curl -s -o /opt/atlassian/atlassian-stash.tar.gz -SL 'https://www.atlassian.com/software/stash/downloads/binary/atlassian-stash-3.11.1.tar.gz' \
   && tar xf /opt/atlassian/atlassian-stash.tar.gz -C /opt/atlassian --strip-components=1 \
   && rm -f /opt/atlassian/atlassian-stash.tar.gz \
   && mkdir -p /opt/atlassian/lib/native \
