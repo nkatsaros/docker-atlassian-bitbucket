@@ -21,12 +21,12 @@ RUN apt-get update && apt-get install -y \
     perl \
   && rm -rf /var/lib/apt/lists/*
 
-ENV BITBUCKET_VERSION 4.1.4
+ENV BITBUCKET_VERSION 4.3.1
 
 # extract bitbucket
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/* \
   && mkdir -p /opt/atlassian \
-  && curl -s -o /opt/atlassian/atlassian-bitbucket.tar.gz -SL 'https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-4.1.4.tar.gz' \
+  && curl -s -o /opt/atlassian/atlassian-bitbucket.tar.gz -SL 'https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-4.3.1.tar.gz' \
   && tar xf /opt/atlassian/atlassian-bitbucket.tar.gz -C /opt/atlassian --strip-components=1 \
   && rm -f /opt/atlassian/atlassian-bitbucket.tar.gz \
   && mkdir -p /opt/atlassian/lib/native \
